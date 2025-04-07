@@ -11,8 +11,6 @@ import { Button } from "../components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs"
-import ProfilePhotoModal from "../components/ProfilePhotoModal"
-// Import layout components
 import { PageLayout, Section, Header, Footer } from "../components/layout/PageLayout"
 import ChatsContainer from "../components/chats/ChatsContainer";
 import { getTotalUnreadCount } from "../components/chats/ChatNotifications";
@@ -31,66 +29,14 @@ const Logo = () => (
 
 // Mock data and component definitions remain unchanged
 const MOCK_BILL_SUMMARY = {
-  totalBill: 1250.5,
-  youOwe: 485.75,
-  theyOwe: 764.75,
+  totalBill: 0,
+  youOwe: 0,
+  theyOwe: 0,
 }
 
-const MOCK_RECENT_ACTIVITY = [
-  {
-    id: 1,
-    description: "Dinner at Olive Garden with Alice",
-    amount: 84.5,
-    date: "2024-02-20",
-  },
-  {
-    id: 2,
-    description: "Movie tickets with Bob",
-    amount: 32.0,
-    date: "2024-02-19",
-  },
-  {
-    id: 3,
-    description: "Grocery shopping with Charlie",
-    amount: 156.25,
-    date: "2024-02-18",
-  },
-  {
-    id: 4,
-    description: "Utilities split with Dana",
-    amount: 213.0,
-    date: "2024-02-17",
-  },
-]
+const MOCK_RECENT_ACTIVITY = []
 
-const MOCK_FRIENDS = [
-  {
-    name: "Alice Johnson",
-    imgSrc: "/placeholder.svg?height=100&width=100",
-    owes: 125.5,
-    isOwed: false,
-  },
-  {
-    name: "Bob Smith",
-    imgSrc: "/placeholder.svg?height=100&width=100",
-    owes: 0,
-    isOwed: true,
-    amount: 45.75,
-  },
-  {
-    name: "Charlie Brown",
-    imgSrc: "/placeholder.svg?height=100&width=100",
-    owes: 89.25,
-    isOwed: false,
-  },
-  {
-    name: "Dana White",
-    imgSrc: "/placeholder.svg?height=100&width=100",
-    owes: 0,
-    isOwed: true,
-    amount: 178.5,
-  },
-]
+const MOCK_FRIENDS = []
 
 // Friend Card Component remains unchanged
 function FriendCard({ name, imgSrc, owes, isOwed, amount }) {

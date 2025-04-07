@@ -5,6 +5,7 @@ import { Button } from "../components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../components/ui/card";
 import { ArrowLeft, Check, CreditCard, Eye, EyeOff } from "lucide-react";
 
+
 export default function Login() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -15,6 +16,11 @@ export default function Login() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
+
+
+  if (Cookies.get('acessToken')) {
+    navigate('/dashboard');
+  }
 
   const handleChange = (e) => {
       const { name, value } = e.target;
@@ -59,6 +65,7 @@ export default function Login() {
           const data = await response.json();
 
             if (response.ok) {
+
                 // Refresh token - long lived (365 days)
                 Cookies.set('refreshToken', data.refresh_token, {
                     expires: 365,
